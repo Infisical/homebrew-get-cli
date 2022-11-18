@@ -5,20 +5,20 @@
 class Infisical < Formula
   desc "The official Infisical CLI"
   homepage "https://infisical.com"
-  version "0.3.7"
+  version "0.4.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Infisical/infisical-go-lang-cli/releases/download/v0.3.7/infisical-go-lang-cli_0.3.7_darwin_arm64.tar.gz"
-      sha256 "26488731e57dcd0070a46ffba1b675710a9b52fd2fa5b5fac52ba15671fd362d"
+      url "https://github.com/Infisical/infisical-go-lang-cli/releases/download/v0.4.2/infisical-go-lang-cli_0.4.2_darwin_arm64.tar.gz"
+      sha256 "b75185fbc4b17fed438aaabae1dfc0132b599cde4d5a81d0f0e9a68c7ab0dab3"
 
       def install
         bin.install "infisical"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Infisical/infisical-go-lang-cli/releases/download/v0.3.7/infisical-go-lang-cli_0.3.7_darwin_amd64.tar.gz"
-      sha256 "3df689345b1d28e8e2a8fd954117bb184a1a39ecf36815ebf26654e7743c924c"
+      url "https://github.com/Infisical/infisical-go-lang-cli/releases/download/v0.4.2/infisical-go-lang-cli_0.4.2_darwin_amd64.tar.gz"
+      sha256 "168138479aecdf0c665d5356be5590b0cac45d195fe381ff9bdc53a48062c463"
 
       def install
         bin.install "infisical"
@@ -27,17 +27,25 @@ class Infisical < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Infisical/infisical-go-lang-cli/releases/download/v0.3.7/infisical-go-lang-cli_0.3.7_linux_amd64.tar.gz"
-      sha256 "c19d05e8be71d3f7f9c921bb4b451a7d58c9cd1459bfc58910beb914008cd40e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Infisical/infisical-go-lang-cli/releases/download/v0.4.2/infisical-go-lang-cli_0.4.2_linux_arm64.tar.gz"
+      sha256 "1eed7e87e46c9323a3f94c9f8199d3e78e275c2226badf791e71ec10e21fad68"
 
       def install
         bin.install "infisical"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Infisical/infisical-go-lang-cli/releases/download/v0.3.7/infisical-go-lang-cli_0.3.7_linux_arm64.tar.gz"
-      sha256 "c32936395c5d7454a95399922dcdef3bf58f3c228e3964dbb9e840922a9c1a93"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/Infisical/infisical-go-lang-cli/releases/download/v0.4.2/infisical-go-lang-cli_0.4.2_linux_armv6.tar.gz"
+      sha256 "2b08cd07dcf658389311f208e063065902fc4318b3b4a2095a355ca281542dab"
+
+      def install
+        bin.install "infisical"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/Infisical/infisical-go-lang-cli/releases/download/v0.4.2/infisical-go-lang-cli_0.4.2_linux_amd64.tar.gz"
+      sha256 "0e626e9c840086a97f922fdb5badfba7f75d5a5e00f084156bf9ec14f70ae984"
 
       def install
         bin.install "infisical"
