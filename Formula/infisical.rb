@@ -5,50 +5,70 @@
 class Infisical < Formula
   desc "The official Infisical CLI"
   homepage "https://infisical.com"
-  version "0.2.14"
+  version "0.2.15"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Infisical/infisical/releases/download/v0.2.14/infisical_0.2.14_darwin_arm64.tar.gz"
-      sha256 "dc1e8af2894caed03b6b2a4e181fd45a62d4a6c9f43ed462c87ccef993ae673e"
+      url "https://github.com/Infisical/infisical/releases/download/v0.2.15/infisical_0.2.15_darwin_arm64.tar.gz"
+      sha256 "0cc7088765adcc27ba4444aa9df037e64b4a5c865302afb199cce9b39c74b048"
 
       def install
         bin.install "infisical"
+        bash_completion.install "completions/infisical.bash" => "infisical"
+        zsh_completion.install "completions/infisical.zsh" => "_infisical"
+        fish_completion.install "completions/infisical.fish"
+        man1.install "manpages/infisical.1.gz"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Infisical/infisical/releases/download/v0.2.14/infisical_0.2.14_darwin_amd64.tar.gz"
-      sha256 "845b5befef3f1c7422fb211ed6c59223d53be3d8f546ff57e1fcbb0cfc600659"
+      url "https://github.com/Infisical/infisical/releases/download/v0.2.15/infisical_0.2.15_darwin_amd64.tar.gz"
+      sha256 "87ca385ffe65769860ea22a408b47a00aa3cfd5b6df9a246438c21714a36288a"
 
       def install
         bin.install "infisical"
+        bash_completion.install "completions/infisical.bash" => "infisical"
+        zsh_completion.install "completions/infisical.zsh" => "_infisical"
+        fish_completion.install "completions/infisical.fish"
+        man1.install "manpages/infisical.1.gz"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Infisical/infisical/releases/download/v0.2.14/infisical_0.2.14_linux_arm64.tar.gz"
-      sha256 "718adfefc6f15d5759e195f6c3ac946f3db73b036fdfb64c75a45d921b54bc99"
-
-      def install
-        bin.install "infisical"
-      end
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Infisical/infisical/releases/download/v0.2.14/infisical_0.2.14_linux_armv6.tar.gz"
-      sha256 "f17980229409f6ed47691cb9bbadff5bbdd43d37b9945b19e66fea71f9c83209"
+      url "https://github.com/Infisical/infisical/releases/download/v0.2.15/infisical_0.2.15_linux_armv6.tar.gz"
+      sha256 "6109072ec8932ac7c358699706754967d52ced3ee74e7737d18fb48a91f9e59a"
 
       def install
         bin.install "infisical"
+        bash_completion.install "completions/infisical.bash" => "infisical"
+        zsh_completion.install "completions/infisical.zsh" => "_infisical"
+        fish_completion.install "completions/infisical.fish"
+        man1.install "manpages/infisical.1.gz"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Infisical/infisical/releases/download/v0.2.14/infisical_0.2.14_linux_amd64.tar.gz"
-      sha256 "2400863657daefad575bca3e415ef1820d876ab0ed9f7c8d42b74d6bcff30990"
+      url "https://github.com/Infisical/infisical/releases/download/v0.2.15/infisical_0.2.15_linux_amd64.tar.gz"
+      sha256 "304cfb6b8228a4bb20cd8093ea0012b593a5496fbee404698e380309b1cd9f6c"
 
       def install
         bin.install "infisical"
+        bash_completion.install "completions/infisical.bash" => "infisical"
+        zsh_completion.install "completions/infisical.zsh" => "_infisical"
+        fish_completion.install "completions/infisical.fish"
+        man1.install "manpages/infisical.1.gz"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Infisical/infisical/releases/download/v0.2.15/infisical_0.2.15_linux_arm64.tar.gz"
+      sha256 "b74e768608f2b7f324224e582525234afefea90e14f9d822f6b0f27898d338ec"
+
+      def install
+        bin.install "infisical"
+        bash_completion.install "completions/infisical.bash" => "infisical"
+        zsh_completion.install "completions/infisical.zsh" => "_infisical"
+        fish_completion.install "completions/infisical.fish"
+        man1.install "manpages/infisical.1.gz"
       end
     end
   end
