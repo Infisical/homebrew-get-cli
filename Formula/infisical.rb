@@ -5,50 +5,70 @@
 class Infisical < Formula
   desc "The official Infisical CLI"
   homepage "https://infisical.com"
-  version "0.4.4"
+  version "0.4.5"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.4.4/infisical_0.4.4_darwin_arm64.tar.gz"
-      sha256 "c7116423cd961020c2ec021483a845f9a4af8046924eaf069346492506260331"
+    if Hardware::CPU.intel?
+      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.4.5/infisical_0.4.5_darwin_amd64.tar.gz"
+      sha256 "55c0da2179e6ffb713798ce2af3de01faa60f325acd737bc82fa7c2bea99a19a"
 
       def install
         bin.install "infisical"
+        bash_completion.install "completions/infisical.bash" => "infisical"
+        zsh_completion.install "completions/infisical.zsh" => "_infisical"
+        fish_completion.install "completions/infisical.fish"
+        man1.install "manpages/infisical.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.4.4/infisical_0.4.4_darwin_amd64.tar.gz"
-      sha256 "78d334068cd8973ddf652c5a465a534edb0fddb59a75be6574af2c9069acee39"
+    if Hardware::CPU.arm?
+      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.4.5/infisical_0.4.5_darwin_arm64.tar.gz"
+      sha256 "f42b64cda62c833a2958f7087f0817d52480c4dcc4eda30e477e3d3da47cf9a9"
 
       def install
         bin.install "infisical"
+        bash_completion.install "completions/infisical.bash" => "infisical"
+        zsh_completion.install "completions/infisical.zsh" => "_infisical"
+        fish_completion.install "completions/infisical.fish"
+        man1.install "manpages/infisical.1.gz"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.4.4/infisical_0.4.4_linux_amd64.tar.gz"
-      sha256 "cb8d95ba579379fca47ef9388cb9152aebffc7e998399ebc76376ea92cfa8c48"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.4.5/infisical_0.4.5_linux_armv6.tar.gz"
+      sha256 "3c18a39802f7160524f875fd99d081ff357cb00ccd53db0043fcf3a253457780"
 
       def install
         bin.install "infisical"
+        bash_completion.install "completions/infisical.bash" => "infisical"
+        zsh_completion.install "completions/infisical.zsh" => "_infisical"
+        fish_completion.install "completions/infisical.fish"
+        man1.install "manpages/infisical.1.gz"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.4.4/infisical_0.4.4_linux_armv6.tar.gz"
-      sha256 "f9f2cceeffee9a9b93366c4e56cdef12c6b8d4abce97b93b3fe71e2a4626e0b1"
+    if Hardware::CPU.intel?
+      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.4.5/infisical_0.4.5_linux_amd64.tar.gz"
+      sha256 "75791c34b2f0a80027a78eda87278d954bdd52a1802c6c6e204e5b8261f8fd53"
 
       def install
         bin.install "infisical"
+        bash_completion.install "completions/infisical.bash" => "infisical"
+        zsh_completion.install "completions/infisical.zsh" => "_infisical"
+        fish_completion.install "completions/infisical.fish"
+        man1.install "manpages/infisical.1.gz"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.4.4/infisical_0.4.4_linux_arm64.tar.gz"
-      sha256 "386b8a9bab9a39be5c0b552caa26c6643c21be51e25c695bc7af12886bc4b666"
+      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.4.5/infisical_0.4.5_linux_arm64.tar.gz"
+      sha256 "0a4aa8f3de7d27448eccad6fd02d8c39ec1f0c63fc8bba4fc517e33ed5069797"
 
       def install
         bin.install "infisical"
+        bash_completion.install "completions/infisical.bash" => "infisical"
+        zsh_completion.install "completions/infisical.zsh" => "_infisical"
+        fish_completion.install "completions/infisical.fish"
+        man1.install "manpages/infisical.1.gz"
       end
     end
   end
