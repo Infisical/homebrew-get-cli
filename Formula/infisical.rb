@@ -5,12 +5,12 @@
 class Infisical < Formula
   desc "The official Infisical CLI"
   homepage "https://infisical.com"
-  version "0.12.3"
+  version "0.13.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.12.3/infisical_0.12.3_darwin_arm64.tar.gz"
-      sha256 "d7328a4326501a8c346a6153e7be400a878c1b816ec2a1f527a5b7ee442f711b"
+      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.13.0/infisical_0.13.0_darwin_arm64.tar.gz"
+      sha256 "b5336312937215b7059433216c2fa98a2d63d8f0b9a06453564b3a4a19e15f74"
 
       def install
         bin.install "infisical"
@@ -21,8 +21,8 @@ class Infisical < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.12.3/infisical_0.12.3_darwin_amd64.tar.gz"
-      sha256 "4eab4f269d3d70f05b873ba366f5f9d41901b3b518ca5ed60ef0edfb946d8794"
+      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.13.0/infisical_0.13.0_darwin_amd64.tar.gz"
+      sha256 "a66009fde1152e790372ac448971a3518bb5b332267452b23c0902686850bce4"
 
       def install
         bin.install "infisical"
@@ -35,21 +35,9 @@ class Infisical < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.12.3/infisical_0.12.3_linux_armv6.tar.gz"
-      sha256 "811e2070a2df6cbbbf53c26af24c839442bc48a2151a961e83ead2cccd5bdc7e"
-
-      def install
-        bin.install "infisical"
-        bash_completion.install "completions/infisical.bash" => "infisical"
-        zsh_completion.install "completions/infisical.zsh" => "_infisical"
-        fish_completion.install "completions/infisical.fish"
-        man1.install "manpages/infisical.1.gz"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.12.3/infisical_0.12.3_linux_amd64.tar.gz"
-      sha256 "35ec3c2553e03e919454f35613d640f21d346775330b378661d005e0ef06081f"
+      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.13.0/infisical_0.13.0_linux_amd64.tar.gz"
+      sha256 "2b304d5cd5242f46d0f40117983ebcde3ee67224e9dc0a718af653ee2e807453"
 
       def install
         bin.install "infisical"
@@ -60,8 +48,20 @@ class Infisical < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.12.3/infisical_0.12.3_linux_arm64.tar.gz"
-      sha256 "59b4477d350b9d2d71988c922ba967c40298ec98a074526b9a471f7950501dab"
+      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.13.0/infisical_0.13.0_linux_arm64.tar.gz"
+      sha256 "c0958d452f718c785c65d1b9c0ee0ab9eadc5c4548e679cd51884777baf47e83"
+
+      def install
+        bin.install "infisical"
+        bash_completion.install "completions/infisical.bash" => "infisical"
+        zsh_completion.install "completions/infisical.zsh" => "_infisical"
+        fish_completion.install "completions/infisical.fish"
+        man1.install "manpages/infisical.1.gz"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/Infisical/infisical/releases/download/infisical-cli/v0.13.0/infisical_0.13.0_linux_armv6.tar.gz"
+      sha256 "71b045ba77874649637d2d2b1c84c2c6d87890d93fcc68b909585b1545e37ea2"
 
       def install
         bin.install "infisical"
