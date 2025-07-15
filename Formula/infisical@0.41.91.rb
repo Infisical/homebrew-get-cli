@@ -10,7 +10,7 @@ class InfisicalAT04191 < Formula
   on_macos do
     on_intel do
       url "https://github.com/Infisical/cli/releases/download/v0.41.91/cli_0.41.91_darwin_amd64.tar.gz"
-      sha256 "9ba667f3dfe0cf852de4fbdd4168018eab6dfd287b6efdabff464778983e72d9"
+      sha256 "e4bbe92de87743be5eafde34c5d149971af3cf8c2ff685776979e0b3cbc18e60"
 
       def install
         bin.install "infisical"
@@ -22,7 +22,7 @@ class InfisicalAT04191 < Formula
     end
     on_arm do
       url "https://github.com/Infisical/cli/releases/download/v0.41.91/cli_0.41.91_darwin_arm64.tar.gz"
-      sha256 "a4e445c911dce7ffa7ddf651ba31cf3562376f5804ea5fd78a8d2b03345e47bd"
+      sha256 "ed2b6a39b38e6819d667a1bac7a40401bec34514f948c681c0c7ae62b78a61fd"
 
       def install
         bin.install "infisical"
@@ -38,7 +38,7 @@ class InfisicalAT04191 < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/Infisical/cli/releases/download/v0.41.91/cli_0.41.91_linux_amd64.tar.gz"
-        sha256 "27ec5960a273753973ac2f27784ee4230894b033f3ddedef29e3f36326ae46e0"
+        sha256 "a97ed2578b66c5d9a08e46861284863a55ea76c512da7c8ed07c71b2ed51ccd9"
 
         def install
           bin.install "infisical"
@@ -52,7 +52,7 @@ class InfisicalAT04191 < Formula
     on_arm do
       if !Hardware::CPU.is_64_bit?
         url "https://github.com/Infisical/cli/releases/download/v0.41.91/cli_0.41.91_linux_armv6.tar.gz"
-        sha256 "6f5177b7056d2810c39ae10238e00aa00863789fc0af25018e4a3b9101692e99"
+        sha256 "ae24ed6bd710d99647f54f490559420992809bbd900f1ebaed41e1f2ce04667b"
 
         def install
           bin.install "infisical"
@@ -66,7 +66,7 @@ class InfisicalAT04191 < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/Infisical/cli/releases/download/v0.41.91/cli_0.41.91_linux_arm64.tar.gz"
-        sha256 "b7380baca0b7142006d122836a8f0797c3e663ea8a5816aa463f122f219a9353"
+        sha256 "f9064cf69f46d0540cf5b0581ccc73cb2162ba2f9f9872617b990503c535635e"
 
         def install
           bin.install "infisical"
