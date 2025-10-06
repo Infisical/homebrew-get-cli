@@ -10,7 +10,7 @@ class Infisical < Formula
   on_macos do
     on_intel do
       url "https://github.com/Infisical/cli/releases/download/v0.43.0/cli_0.43.0_darwin_amd64.tar.gz"
-      sha256 "afbca26444c0e7d92382c3ab5ce119655b6069f579f06eb190289cb3320403c9"
+      sha256 "88dd1b2315cf2dc4608eee030f1a8981a93f80e3db65d2b3aa7eeeb542480a61"
 
       def install
         bin.install "infisical"
@@ -22,7 +22,7 @@ class Infisical < Formula
     end
     on_arm do
       url "https://github.com/Infisical/cli/releases/download/v0.43.0/cli_0.43.0_darwin_arm64.tar.gz"
-      sha256 "543415ecfb279c14a941d603337971ab658e82a9a1c7ce0fa10ab4d4d35f17be"
+      sha256 "6768ab1017423f6c6450563d23dd617426935efd56c4155244d5da05b2695c94"
 
       def install
         bin.install "infisical"
@@ -38,7 +38,7 @@ class Infisical < Formula
     on_intel do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/Infisical/cli/releases/download/v0.43.0/cli_0.43.0_linux_amd64.tar.gz"
-        sha256 "ddfef4fc37fb9b7f589628562e2f0f25455e5f1e30a927ace956b0e80650f9fa"
+        sha256 "6fe9b91c0e79551c372ab6360ee6d8a49be7e933b20512977ed7c2f49f90c7de"
 
         def install
           bin.install "infisical"
@@ -52,7 +52,7 @@ class Infisical < Formula
     on_arm do
       if !Hardware::CPU.is_64_bit?
         url "https://github.com/Infisical/cli/releases/download/v0.43.0/cli_0.43.0_linux_armv6.tar.gz"
-        sha256 "be53acd4d6fbf23d6b1e55cc0efb52c5d92a8f56f2bf164c1ed23951bbd85e11"
+        sha256 "3168a898a1e48c44157b9f94b5eca80fa42e6275aa5c84562f6499f04fabcb18"
 
         def install
           bin.install "infisical"
@@ -66,7 +66,7 @@ class Infisical < Formula
     on_arm do
       if Hardware::CPU.is_64_bit?
         url "https://github.com/Infisical/cli/releases/download/v0.43.0/cli_0.43.0_linux_arm64.tar.gz"
-        sha256 "2296c0bed0d4d053800b57b3f5349091c959e278583f8e90c58ae666cc182703"
+        sha256 "2d5fa4724c54af058f38a6b51b529684d9f1dde6c7e496fd1d0d575aee08f8be"
 
         def install
           bin.install "infisical"
