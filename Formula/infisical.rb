@@ -5,77 +5,31 @@
 class Infisical < Formula
   desc "The official Infisical CLI"
   homepage "https://infisical.com"
-  version "0.43.82"
+  version "0.43.83"
+  depends_on :macos
 
-  on_macos do
-    on_intel do
-      url "https://github.com/Infisical/cli/releases/download/v0.43.82/cli_0.43.82_darwin_amd64.tar.gz"
-      sha256 "0bd5b65bb1f8f0896cb30206cd499ccb21aaf2560841ae03f13c60b347f364b7"
+  on_intel do
+    url "https://github.com/Infisical/cli/releases/download/v0.43.83/cli_0.43.83_darwin_amd64.tar.gz"
+    sha256 "92ee223a0b6e29318b5d76775026a47ca491402b5b7ddb0a3dc77680e6dda088"
 
-      def install
-        bin.install "infisical"
-        bash_completion.install "completions/infisical.bash" => "infisical"
-        zsh_completion.install "completions/infisical.zsh" => "_infisical"
-        fish_completion.install "completions/infisical.fish"
-        man1.install "manpages/infisical.1.gz"
-      end
-    end
-    on_arm do
-      url "https://github.com/Infisical/cli/releases/download/v0.43.82/cli_0.43.82_darwin_arm64.tar.gz"
-      sha256 "14e6a3d1a6ed181598d21c12c3e0ed3a4318881b447894a7008ea4a7ee7253d7"
-
-      def install
-        bin.install "infisical"
-        bash_completion.install "completions/infisical.bash" => "infisical"
-        zsh_completion.install "completions/infisical.zsh" => "_infisical"
-        fish_completion.install "completions/infisical.fish"
-        man1.install "manpages/infisical.1.gz"
-      end
+    def install
+      bin.install "infisical"
+      bash_completion.install "completions/infisical.bash" => "infisical"
+      zsh_completion.install "completions/infisical.zsh" => "_infisical"
+      fish_completion.install "completions/infisical.fish"
+      man1.install "manpages/infisical.1.gz"
     end
   end
+  on_arm do
+    url "https://github.com/Infisical/cli/releases/download/v0.43.83/cli_0.43.83_darwin_arm64.tar.gz"
+    sha256 "084aeb842a87245dae454feb771f4a926ccc4b838b3470a711badc8769ba99c9"
 
-  on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/Infisical/cli/releases/download/v0.43.82/cli_0.43.82_linux_amd64.tar.gz"
-        sha256 "a634ec6deeb38208993ebd9ebf14ca1b2fc9f86552bd00e82108232522d50373"
-
-        def install
-          bin.install "infisical"
-          bash_completion.install "completions/infisical.bash" => "infisical"
-          zsh_completion.install "completions/infisical.zsh" => "_infisical"
-          fish_completion.install "completions/infisical.fish"
-          man1.install "manpages/infisical.1.gz"
-        end
-      end
-    end
-    on_arm do
-      if !Hardware::CPU.is_64_bit?
-        url "https://github.com/Infisical/cli/releases/download/v0.43.82/cli_0.43.82_linux_armv6.tar.gz"
-        sha256 "0c2e333343b3b128b7db50dd196a4e17caf61b058bfc65ad88284f1db34b32de"
-
-        def install
-          bin.install "infisical"
-          bash_completion.install "completions/infisical.bash" => "infisical"
-          zsh_completion.install "completions/infisical.zsh" => "_infisical"
-          fish_completion.install "completions/infisical.fish"
-          man1.install "manpages/infisical.1.gz"
-        end
-      end
-    end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/Infisical/cli/releases/download/v0.43.82/cli_0.43.82_linux_arm64.tar.gz"
-        sha256 "cf9dd4b2e3777915888912b041a4997e21dccd136e138b9b09ba4815147837fb"
-
-        def install
-          bin.install "infisical"
-          bash_completion.install "completions/infisical.bash" => "infisical"
-          zsh_completion.install "completions/infisical.zsh" => "_infisical"
-          fish_completion.install "completions/infisical.fish"
-          man1.install "manpages/infisical.1.gz"
-        end
-      end
+    def install
+      bin.install "infisical"
+      bash_completion.install "completions/infisical.bash" => "infisical"
+      zsh_completion.install "completions/infisical.zsh" => "_infisical"
+      fish_completion.install "completions/infisical.fish"
+      man1.install "manpages/infisical.1.gz"
     end
   end
 end
