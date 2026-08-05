@@ -10,7 +10,7 @@ class InfisicalAT043118 < Formula
 
   on_intel do
     url "https://github.com/Infisical/cli/releases/download/v0.43.118/cli_0.43.118_darwin_amd64.tar.gz"
-    sha256 "7f887f41989628a184f4e406715889b74340bdbf47d2f2502c1b33d13982af8a"
+    sha256 "f8a3247ceafe9a51c64fe0de2853bfc0d5170115e9251ff6b1b8c13963ba588a"
 
     def install
       bin.install "infisical"
@@ -22,7 +22,7 @@ class InfisicalAT043118 < Formula
   end
   on_arm do
     url "https://github.com/Infisical/cli/releases/download/v0.43.118/cli_0.43.118_darwin_arm64.tar.gz"
-    sha256 "4403ad59f01e0f0a1465527163a5de882c685eabfd818997d1e314570591c293"
+    sha256 "10132777121cdfce1aaec267a3a1aeb70940db65d582776dbff195bc5c86a487"
 
     def install
       bin.install "infisical"
