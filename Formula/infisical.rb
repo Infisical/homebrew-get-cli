@@ -5,12 +5,12 @@
 class Infisical < Formula
   desc "The official Infisical CLI"
   homepage "https://infisical.com"
-  version "0.43.126"
+  version "0.43.127"
   depends_on :macos
 
   on_intel do
-    url "https://github.com/Infisical/cli/releases/download/v0.43.126/cli_0.43.126_darwin_amd64.tar.gz"
-    sha256 "b4b613a5632e5fe4a137b55407045c708b5a6709c64b68c41820d9cc5ba40274"
+    url "https://github.com/Infisical/cli/releases/download/v0.43.127/cli_0.43.127_darwin_amd64.tar.gz"
+    sha256 "d2f0941cf93f812e33791197142e61550ba65ffceaaa67e14e7fc8bec8fee18e"
 
     def install
       bin.install "infisical"
@@ -21,8 +21,8 @@ class Infisical < Formula
     end
   end
   on_arm do
-    url "https://github.com/Infisical/cli/releases/download/v0.43.126/cli_0.43.126_darwin_arm64.tar.gz"
-    sha256 "95ee16c6768a849ec473dd6bfdf976cf855be9b98850e3899856c1bc669dacae"
+    url "https://github.com/Infisical/cli/releases/download/v0.43.127/cli_0.43.127_darwin_arm64.tar.gz"
+    sha256 "abb867f7feb981aa863db77d98857f1809eb5c5def115097375b44d77ad453bc"
 
     def install
       bin.install "infisical"
